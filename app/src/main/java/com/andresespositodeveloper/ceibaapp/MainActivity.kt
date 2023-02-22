@@ -9,7 +9,6 @@ import com.andresespositodeveloper.ceibaapp.data.usecase.GetUsersUseCaseImpl
 import com.andresespositodeveloper.ceibaapp.framework.api.Api
 import com.andresespositodeveloper.ceibaapp.framework.api.ServicesEndPoints
 import com.andresespositodeveloper.ceibaapp.framework.api.ServicesRestApi
-import com.andresespositodeveloper.ceibaapp.framework.datasource.UserDataSourceImpl
 import com.andresespositodeveloper.ceibaapp.ui.viewmodel.HomeViewModelImpl
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     var viewModel: HomeViewModelImpl? = null
     var getUserUseCase: GetUsersUseCase? = null
     var userRepository: UserRepository? = null
-    var userDataSource: UserDataSourceImpl? = null
     var api: Api? = null
     lateinit var servicesRestApi: ServicesRestApi
 
