@@ -1,8 +1,13 @@
 package com.andresespositodeveloper.ceibaapp.domain
 
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
 data class CompanyResponse(
-   val name: String?,
-   val catchPhrase: String?,
-   val bs: String?
-)
+   @SerializedName("name") val name: String?,
+   @SerializedName("catchPhrase") val catchPhrase: String?,
+   @SerializedName("bs") val bs: String?
+): Serializable
+
+
 

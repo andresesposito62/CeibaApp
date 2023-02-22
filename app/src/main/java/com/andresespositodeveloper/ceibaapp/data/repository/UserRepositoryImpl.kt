@@ -8,7 +8,7 @@ class UserRepositoryImpl(
 ): UserRepository {
 
     override suspend fun getUserList(): ResultData<List<UserResponse?>> {
-        val geo = GeoResponse("", "")
+        val geo = GeoResponse("123", "")
         val addressResponse = AddressResponse("", "", "", "", geo)
         val companyResponse = CompanyResponse("", "", "")
         val user = UserResponse("", "", "", "", addressResponse, "", "", companyResponse)
