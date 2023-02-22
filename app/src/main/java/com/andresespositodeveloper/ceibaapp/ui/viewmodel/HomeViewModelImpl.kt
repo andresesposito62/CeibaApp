@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.andresespositodeveloper.ceibaapp.data.usecase.GetUsersUseCase
 import com.andresespositodeveloper.ceibaapp.domain.ResultData
 import com.andresespositodeveloper.ceibaapp.domain.User
+import com.andresespositodeveloper.ceibaapp.domain.UserResponse
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,7 +21,7 @@ class HomeViewModelImpl(
     fun getUsers(){
         getUserListJob?.cancel()
         getUserListJob = viewModelScope.launch {
-            val result: ResultData<List<User?>> = withContext(viewModelScope.coroutineContext + Dispatchers.IO) {
+            val result: ResultData<List<UserResponse?>> = withContext(viewModelScope.coroutineContext + Dispatchers.IO) {
                 getUsersUseCase.getUserList()
             }
             when(result){
