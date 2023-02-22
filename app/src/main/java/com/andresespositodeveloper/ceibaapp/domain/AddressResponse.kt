@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class AddressResponse(
-    @SerializedName("street") val street: String?,
-    @SerializedName("suite") val suite: String?,
-    @SerializedName("city") val city: String?,
-    @SerializedName("zipcode") val zipcode: String?,
-    @SerializedName("geo") val geo: GeoResponse
+    @SerializedName("street") var street: String? = null,
+    @SerializedName("suite") var suite: String? = null,
+    @SerializedName("city") var city: String? = null,
+    @SerializedName("zipcode") var zipcode: String? = null,
+    @SerializedName("geo") var geo: GeoResponse? = null
 ): Serializable
 
 

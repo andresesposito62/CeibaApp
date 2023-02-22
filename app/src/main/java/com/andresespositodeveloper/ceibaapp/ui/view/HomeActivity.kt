@@ -21,9 +21,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         userDataSource = UserDataSourceImpl()
-        userRepository = UserRepositoryImpl(userDataSource as UserDataSourceImpl)
+        /*userRepository = UserRepositoryImpl(userDataSource as UserDataSourceImpl)
         getUserUseCase = GetUsersUseCaseImpl(userRepository as UserRepositoryImpl)
         viewModel = HomeViewModelImpl(getUserUseCase as GetUsersUseCaseImpl)
-        viewModel?.getUsers()
+        viewModel?.getUsers()*/
     }
 }

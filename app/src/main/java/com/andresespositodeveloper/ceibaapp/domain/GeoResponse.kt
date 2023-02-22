@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class GeoResponse (
-    @SerializedName("lat") val lat: String?,
-    @SerializedName("lng") val lng: String?
+    @SerializedName("lat") var lat: String? = null,
+    @SerializedName("lng") var lng: String ? = null
 ): Serializable
 
