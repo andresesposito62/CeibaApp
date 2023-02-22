@@ -13,7 +13,7 @@ class Api(
     private val servicesRestApi: ServicesRestApi
 ) {
 
-    suspend fun getUsers(): ResultData<UserResponse?> =
+    suspend fun getUsers(): ResultData<List<UserResponse?>> =
         suspendCoroutine {
             val result = servicesRestApi.getUsers()
             result?.enqueue(object: Callback<List<UserResponse?>>{
@@ -22,7 +22,11 @@ class Api(
                     response: Response<List<UserResponse?>>
                 ) {
                     if (response.code() in MIN_CODE_SUCCESS..MAX_CODE_SUCCESS){
-                        it.resume(ResultData.Success(response.body()?.get(0)))
+                        if (response.body() != null){
+                            it.resume(ResultData.Success(response.body()!!))
+                        }else{
+                            it.resume(ResultData.Failure(Exception(response.code().toString())))
+                        }
                     }else{
                         it.resume(ResultData.Failure(Exception(response.code().toString())))
                     }
