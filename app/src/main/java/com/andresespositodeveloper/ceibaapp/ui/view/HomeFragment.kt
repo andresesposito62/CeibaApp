@@ -1,11 +1,10 @@
 package com.andresespositodeveloper.ceibaapp.ui.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.andresespositodeveloper.ceibaapp.R
+import androidx.fragment.app.Fragment
 import com.andresespositodeveloper.ceibaapp.data.repository.UserRepository
 import com.andresespositodeveloper.ceibaapp.data.repository.UserRepositoryImpl
 import com.andresespositodeveloper.ceibaapp.data.usecase.GetUsersUseCase
@@ -27,7 +26,6 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,7 +52,10 @@ class HomeFragment : Fragment() {
         getUserUseCase = GetUsersUseCaseImpl(userRepository as UserRepositoryImpl)
         viewModel = HomeViewModelImpl(getUserUseCase as GetUsersUseCaseImpl)
         viewModel?.getUsers()
-        binding.text.text = "Probando"
+
+        viewModel?.userListResultLiveData?.observe(viewLifecycleOwner) {
+            binding.text.text = it.toString()
+        }
     }
 
 }
