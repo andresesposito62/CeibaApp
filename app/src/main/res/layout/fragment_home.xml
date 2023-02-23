@@ -5,11 +5,63 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/search_user" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/user_name"
+                tools:text="Leanne Graham"
+                android:textColor="@color/green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                tools:text="310-600-2979"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp"
+                tools:text="andres@gmail.com"
+                android:textIsSelectable="true"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/showPostsButton"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="VER PUBLICACIONES"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
 
 </FrameLayout>

@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.andresespositodeveloper.ceibaapp.R
 import com.andresespositodeveloper.ceibaapp.data.repository.UserRepository
 import com.andresespositodeveloper.ceibaapp.data.repository.UserRepositoryImpl
 import com.andresespositodeveloper.ceibaapp.data.usecase.GetUsersUseCase
@@ -54,7 +56,10 @@ class HomeFragment : Fragment() {
         viewModel?.getUsers()
 
         viewModel?.userListResultLiveData?.observe(viewLifecycleOwner) {
-            binding.text.text = it.toString()
+
+            binding?.userName.text = it.get(0)?.name
+            binding?.email.text = it.get(0)?.email
+            binding?.phone.text = it.get(0)?.phone
         }
     }
 
