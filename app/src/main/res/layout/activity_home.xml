@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.HomeActivity">
 
+    <fragment android:name="com.andresespositodeveloper.ceibaapp.ui.view.HomeFragment"
+        android:id="@+id/homeFragment"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
